@@ -1,0 +1,264 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+
+.publication-title {
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-body img {
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.interpolation-panel .interpolation-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.interpolation-video-column {
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+#interpolation-image-wrapper {
+  width: 100%;
+}
+#interpolation-image-wrapper img {
+  border-radius: 5px;
+}
+
+
+.row {
+  display: flex;
+  align-items: flex-start; /* This will align the items at the top of the row */
+}
+.row p {
+  flex: 1; /* This will allow the paragraph to take up the remaining space in the row */
+}
+
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start; /* Aligns items to the top */
+}
+
+.text-container {
+  flex: 1; /* Allows the container to grow */
+  padding: 15px; /* Adjust padding as needed */
+  max-width: 50%; /* Takes up half the width of the container */
+}
+
+.image-container {
+  flex: 1; /* Allows the container to grow */
+  max-width: 50%; /* Takes up half the width of the container */
+  text-align: center; /* Centers the image if it is smaller than its container */
+}
+
+img {
+  max-width: 100%; /* Ensures the image is responsive and does not overflow its container */
+  height: auto; /* Maintains aspect ratio */
+}
+
+/* Responsive styles - applies when the screen width is 768px or less */
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column; /* Stacks flex items vertically */
+  }
+
+  .text-container,
+  .image-container {
+    max-width: 100%; /* Each container takes full width */
+    margin-bottom: 15px; /* Adds space between the stacked items */
+  }
+
+  img {
+    max-width: 100%; /* Image can take full width of its container */
+  }
+}
+
+
+
+
+.flex-container2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start; /* Aligns items to the top */
+}
+
+.text-container2 {
+  flex: 1; /* Allows the container to grow */
+  padding: 15px; /* Adjust padding as needed */
+  max-width: 70%; /* Takes up half the width of the container */
+}
+
+.image-container2 {
+  flex: 1; /* Allows the container to grow */
+  max-width: 30%; /* Takes up half the width of the container */
+  text-align: center; /* Centers the image if it is smaller than its container */
+}
+
+img2 {
+  max-width: 100%; /* Ensures the image is responsive and does not overflow its container */
+  height: auto; /* Maintains aspect ratio */
+}
+
+/* Responsive styles - applies when the screen width is 768px or less */
+@media (max-width: 768px) {
+  .flex-container2 {
+    flex-direction: column; /* Stacks flex items vertically */
+  }
+
+  .text-container2,
+  .image-container2 {
+    max-width: 100%; /* Each container takes full width */
+    margin-bottom: 15px; /* Adds space between the stacked items */
+  }
+
+  img2 {
+    max-width: 100%; /* Image can take full width of its container */
+  }
+}
+
+
+
+figure {
+  margin: 0; /* Removes the default margin */
+}
+
+figcaption {
+  text-align: center; /* Centers the caption text */
+  margin-top: 8px; /* Provides some space between the image and the caption */
+  font-style: italic; /* Optional: Makes the caption text italic */
+}

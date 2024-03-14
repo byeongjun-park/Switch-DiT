@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Improving diffusion model architectures by synergizing denoising tasks through sparse mixture-of-experts.">
+  <meta name="keywords" content="Diffusion Model Architecture, Multi-Task Learning (MTL), Mixture-of-Experts">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Switch Diffusion Transformer: Synergizing Denoising Tasks with Sparse Mixture-of-Experts</title>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PGB6W6BMP8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PGB6W6BMP8');
+</script>
+  <!-- End Google Tag Manager -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+</head>
+<body>
+  
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Switch Diffusion Transformer: Synergizing Denoising Tasks with Sparse Mixture-of-Experts</h1>
+
+
+<!--            <div class="is-size-3 paper accepted">-->
+<!--              <strong> ICLR 2024</strong>-->
+<!--            </div>-->
+<!--            <br> -->
+
+            <!-- Author name -->
+            <div class="is-size-4 publication-authors">
+              <span class="author-block" style="color: #0606e8;">
+                Byeongjun Park,</span>
+              <span class="author-block" style="color:hwb(332 0% 17%);">
+                Hyojun Go,</span>
+              <span class="author-block"  style="color:hwb(332 0% 17%);">
+                Jinyoung Kim,</span>
+              <span class="author-block" style="color:#0606e8;">
+                Sangmin Woo,</span>
+              <span class="author-block" style="color:#0606e8;">
+                Seokil Ham,</span>
+              <span class="author-block"  style="color:#0606e8;">
+                Changick Kim<sup>&#8224;</sup></span>
+            </div>
+            <br>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><b style="color:#0606e8; font-weight:normal">&#x25B6 </b> Korea Advanced Institute of Science and Technology (KAIST)</b></span>
+              <span class="author-block">&nbsp&nbsp <b style="color:hwb(332 0% 17%); font-weight:normal">&#x25B6 </b> Twelvelabs</span>
+              <br>
+              <span class="author-block">&nbsp&nbsp<sup>&#8224;</sup>Corresponding Author</span>
+            </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2310.07138"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2310.07138"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/byeongjun-park/Switch-DiT"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h4 class="subtitle has-text-centered">
+        Switch-DiT constructs parameter isolation between conflicted denoising tasks without losing semantic information,
+        improving diffusion model architectures through sparse mixture-of-experts.
+      </h4>
+    </div>
+  </div>
+</section>
+
+
+<section class="section"  style="background-color:#efeff081">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Summary</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li>Our work explores how to leverage inter-task relationships between conflicted denoising tasks.</li>
+            <li>
+              We propose a novel diffusion model architecture, Switch Diffusion Transformer <strong>(Switch-DiT)</strong>, that constructs detailed inter-task relationships through sparse mixture-of-experts.
+            </li>
+            <li>
+              We show that <strong>Switch-DiT</strong> builds tailored denoising paths across various generation scenarios.
+            </li>
+          </ul>
+          <img id="teaser1" src="static/images/qual_results.png" alt="teaser">
+          <figcaption style="text-align: center;">
+            <strong>Figure:</strong> Qualtative results of Switch-DiT on ImageNet.
+          </figcaption>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="column is-full-width">
+  <div class="container is-max-desktop">
+  <div class="container is-max-desktop">
+    <h2 class="title is-2">Method: Switch-DiT</h2>
+    <div class="content">
+        <h2 class="title is-4"> 1. Conceptualizing diffusion models as a form of multi-task learning.</h2>
+        <p>
+          Diffusion models are conceptualized as a multi-task learning, where they address a set of denoising tasks at each timestep \(t\).
+           These tasks focus on reducing noise, which is trained to minimize the noise prediction loss
+           \(L_{noise, t} = ||\epsilon - \epsilon_\theta(x_t, t)||_2^2\).
+        </p>
+      </div>
+    </div>
+    <br>
+      <!-- Task Affinity -->
+      <div class="content">
+        <h2 class="title is-4">2. Switch Diffusion Transformer</h2>
+        <!-- Image Container -->
+        <img id="overview" src="static/images/switch-dit.png" alt="overview">
+        <figcaption style="text-align: center;">
+          <strong>Figure:</strong> Overview of Switch Diffusion Transformer (Switch-DiT). Note that our Switch-DiT is built upon the DiT architecture. </figcaption>
+        <br>
+        <!-- Text Container -->
+        <div class="content">
+          <p>
+            Switch-DiT establish task-specific paths for each
+            denoising task within a single neural network \(\epsilon_\theta\) by
+            utilizing sparse mixture-of-experts (SMoE). For given \(i\)-th block's input \(z_i \) and M experts \(E^1_i, E^2_i, \dots, E^M_i \),
+            our SMoE layers outputs \(m(z_i) \) as follows:
+            \[m(z_i) = \sum_{j=1}^{M}g_{i, j}(e_t)E_i^j(z_i) \]
+            where the gating output \( g_{i} \) is defined by
+
+            \[ g_i(e_t) = TopK(Softmax(h_i(e_t)), k). \]
+
+            Then, \(z_i \cdot m(z_i) \) is processed into the remaining transformer block, and \(z_i \cdot (1-m(z_i)) \) is skip-connected to the end.
+          </p>
+        </div>
+      </div>
+      <br>
+
+      <div class="content">
+        <h2 class="title is-4">3. Diffusion Prior Loss</h2>
+        <!-- Image Container -->
+        <img id="gating_outputs" src="static/images/gating_outputs.png" alt="gating_outputs">
+        <figcaption style="text-align: center;">
+          <strong>Figure:</strong> Gating Outputs Integration. </figcaption>
+        <br>
+        <!-- Text Container -->
+        <div class="content">
+          <p>
+            We first aggregate all gating outputs for each transformer block, and then integrated outputs are trained to match with those similarly derived from DTR (details in our paper).
+            \[ L_{dp, t} = D_{JS} \Big( \frac{\tilde{p}_{tot}(e_t)}{N}, \frac{w_t^{prior}}{kN} \Big). \]
+
+            Combined with the noise prediction loss, our Switch-DiT is trained by \( L_{noise, t} + \lambda_{dp} L_{dp, t} \).
+          </p>
+        </div>
+        </div>
+      </div>
+  </div>
+</section>
+  
+<section class="section" style="background-color:#efeff081">
+  <div class="column is-full-width">
+    <div class="container is-max-desktop">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2">Experimental Results</h2>
+
+      <h2 class="title is-4"> 1. Improved quality of generated images</h2>
+      <img id="taskaffinity" src="static/images/switch_results.png">
+      <figcaption style="text-align: center;">
+        <strong>Figure:</strong> Consistent improvements in image quality. Also, Switch-DiT surpasses the tradeoff of DiT.
+      </figcaption>
+      <br> </br>
+      <p>
+        Switch-DiT shows significant improvement in image quality across different model sizes.
+        Based on the observed strong correlation between GFLOPs and FID scores in DiT,
+        we conclude that the performance enhancement achieved by Switch-DiT cannot solely be attributed to additional parameters and GFLOPs.
+        Rather, Switch-DiT surpasses the trade-offs of DiT, leading to a notable performance improvement.
+      </p>
+      <br> <br>
+      <h2 class="title is-4"> 2. Tailored Denoising Path Construction</h2>
+      <br> </br>
+      <img id="taskaffinity" src="static/images/gating_variety.png">
+      <figcaption style="text-align: center;">
+        <strong>Figure:</strong> Even with the same configuration, entire denoising paths are varied depending on the model size and dataset.
+      </figcaption>
+      <br> </br>
+      <p>
+        Switch-DiT constructs tailored denoising paths across various generation scenarios, even when using the same diffusion prior.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">BibTeX</h2>
+    <pre><code>@article{park2023denoising,
+      title={Denoising Task Routing for Diffusion Models},
+      author={Park, Byeongjun and Woo, Sangmin and Go, Hyojun and Kim, Jin-Young and Kim, Changick},
+      journal={arXiv preprint arXiv:2310.07138},
+      year={2023}
+    }
+</code></pre>
+  </div>
+</section>
+
+<section class="section" id="Acknowledgement">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgement</h2>
+    <p>
+      This website is adapted from <a
+      href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and <a href="https://llava-vl.github.io/">LLaVA</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+      Commons Attribution-ShareAlike 4.0 International License</a>.
+    </p>
+</section>
+
+</body>
+</html>
