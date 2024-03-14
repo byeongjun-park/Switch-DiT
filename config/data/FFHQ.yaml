@@ -1,0 +1,4 @@
+# @package _group_
+name: "FFHQ"
+num_classes: 1
+is_uncond: True

@@ -1,0 +1,16 @@
+# ignore scripts
+*.sh
+!example_script.sh
+# ignore results
+results/
+evaluation/*.csv
+evaluation/*.npz
+
+# ignore cache
+*.pyc
+evaluation/*.pb
+env
+models/parallel_linear/build
+models/parallel_linear/parallel_experts.egg-info
+samples
+classify_image_graph_def.pb

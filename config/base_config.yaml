@@ -1,0 +1,45 @@
+general:
+  data_path: null
+  iterations: 400000
+  num_workers: 16
+  global_batch_size: 256
+  global_seed: 0
+  gpu_offset: 0
+  mixed_precision: True
+  image_size: 256
+  schedule_name: "cosine"
+  loss_weight_type: "constant" # "constant", "uw",
+  vae: "ema" # "ema" or "mse"
+
+optim:
+  lr: 1e-4
+  weight_decay: 0.0
+
+defaults:
+  - data: ImageNet
+  - models: DiT
+  - routing: DMoE # DTR or DMoE
+  - hydra/job_logging: disabled
+  - hydra/hydra_logging: disabled
+logs:
+  log_every: 100
+  ckpt_every: 50_000
+  results_dir: results/${data.name}/${general.schedule_name}_scheduling/${routing.name}_${general.loss_weight_type}
+  project_name: ${data.name}
+
+# Disable hydra log files
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+
+
+eval:
+  samples_dir: samples/${data.name}/${general.schedule_name}_scheduling/${routing.name}_${general.loss_weight_type}
+  per_proc_batch_size: 200
+  num_fid_samples: 50_000
+  cfg_scale: 1.5
+  num_sampling_steps: 250
+  ckpt_path:
+    version: 0
+    iterations: ${general.iterations}

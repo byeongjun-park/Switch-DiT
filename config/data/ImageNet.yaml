@@ -1,0 +1,4 @@
+# @package _group_
+name: "ImageNet"
+num_classes: 1000
+is_uncond: False

@@ -1,0 +1,5 @@
+# @package _group_
+name: "DiT-S/2"
+param:
+  num_classes: ${data.num_classes}
+  latent_size: null # To be filled in running code.

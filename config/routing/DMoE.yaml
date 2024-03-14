@@ -1,0 +1,7 @@
+# @package _group_
+name: 'DMoE'
+taskcount: 1000  # fixed
+w_JSD: 1       # have to be fine-tuned
+param:
+  num_experts: 3
+  k: 2

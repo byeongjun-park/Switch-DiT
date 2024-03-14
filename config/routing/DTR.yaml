@@ -1,0 +1,6 @@
+# @package _group_
+name: 'DTR'
+param:
+  alpha: 4.0 # parameter for task weights
+  beta: 0.8 # following MaTL's observation.
+  taskcount: 1000
