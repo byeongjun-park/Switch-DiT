@@ -1,10 +1,9 @@
 # Switch Diffusion Transformer: Synergizing Denoising Tasks with Sparse Mixture-of-Experts
 
-[//]: # (<!-- Arxiv Link, Project Link -->)
+<!-- Arxiv Link, Project Link -->
 
-[//]: # (<a href="https://arxiv.org/abs/2310.07138"><img src="https://img.shields.io/badge/arXiv-2310.07138-b31b1b.svg"></a>)
-
-[//]: # (<a href="https://byeongjun-park.github.io/Switch-DiT/"><img src="https://img.shields.io/badge/Project%20Page-online-brightgreen"></a>)
+<a href="https://arxiv.org/abs/2403.09176"><img src="https://img.shields.io/badge/arXiv-2403.09176-b31b1b.svg"></a>
+<a href="https://byeongjun-park.github.io/Switch-DiT/"><img src="https://img.shields.io/badge/Project%20Page-online-brightgreen"></a>
 
 This repository contains the official pytorch implementation of the paper: "Switch Diffusion Transformer: Synergizing Denoising Tasks with Sparse Mixture-of-Experts".
 In this repository, we release codes for the improved version of [DiT](https://openaccess.thecvf.com/content/ICCV2023/papers/Peebles_Scalable_Diffusion_Models_with_Transformers_ICCV_2023_paper.pdf) and [DTR](https://openreview.net/pdf?id=MY0qlcFcUg) with the sparse mixture-of-experts. 
@@ -17,10 +16,6 @@ In this repository, we release codes for the improved version of [DiT](https://o
 ## Updates
 
  * **2024.03.14**: Initial Release.
-
-## Todo
-- [ ] Arxiv Paper
-- [ ] Project Pages
 
 
 ## Setup
@@ -92,24 +87,19 @@ Our Switch-DiT achieves consistent performance improvements on the ImageNet data
 
 
 
-[//]: # (## BibTeX)
+## BibTeX
 
-[//]: # ()
-[//]: # (```bibtex)
 
-[//]: # (@article{park2023denoising,)
-
-[//]: # (  title={Denoising Task Routing for Diffusion Models},)
-
-[//]: # (  author={Park, Byeongjun and Woo, Sangmin and Go, Hyojun and Kim, Jin-Young and Kim, Changick},)
-
-[//]: # (  journal={arXiv preprint arXiv:2310.07138},)
-
-[//]: # (  year={2023})
-
-[//]: # (})
-
-[//]: # (```)
+```bibtex
+@misc{park2024switch,
+    title={Switch Diffusion Transformer: Synergizing Denoising Tasks with Sparse Mixture-of-Experts},
+    author={Byeongjun Park and Hyojun Go and Jin-Young Kim and Sangmin Woo and Seokil Ham and Changick Kim},
+    year={2024},
+    eprint={2403.09176},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
+```
 
 ## Acknowledgments
 This codebase borrows from most notably [DIT](https://github.com/facebookresearch/DiT) and [DTR](https://github.com/byeongjun-park/DTR).
