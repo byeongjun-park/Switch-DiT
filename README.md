@@ -91,13 +91,11 @@ Our Switch-DiT achieves consistent performance improvements on the ImageNet data
 
 
 ```bibtex
-@misc{park2024switch,
-    title={Switch Diffusion Transformer: Synergizing Denoising Tasks with Sparse Mixture-of-Experts},
-    author={Byeongjun Park and Hyojun Go and Jin-Young Kim and Sangmin Woo and Seokil Ham and Changick Kim},
-    year={2024},
-    eprint={2403.09176},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
+@article{park2024switch,
+  title={Switch Diffusion Transformer: Synergizing Denoising Tasks with Sparse Mixture-of-Experts},
+  author={Park, Byeongjun and Go, Hyojun and Kim, Jin-Young and Woo, Sangmin and Ham, Seokil and Kim, Changick},
+  journal={arXiv preprint arXiv:2403.09176},
+  year={2024}
 }
 ```
 
