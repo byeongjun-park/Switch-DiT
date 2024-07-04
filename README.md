@@ -10,6 +10,9 @@ In this repository, we release codes for the improved version of [DiT](https://o
 
 <img src="assets/switch-dit.png" width="90%" alt="Switch-DiT">
 
+This project is inspired by following our previous work: 
+- [ANT](https://github.com/gohyojun15/ANT_diffusion/blob/main/README.md) (Neurips 2023)
+- [DTR](https://github.com/byeongjun-park/DTR) (ICLR 2024)
 ----------------
 
 
